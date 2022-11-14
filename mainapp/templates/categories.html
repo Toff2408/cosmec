@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block tilte %} Home page {% endblock tilte %}
+{% block header %} {% include "header.html" %} {% endblock header %}
+{% block hero %} {% include "hero.html" %} {% endblock hero %}
+
+{% block content %}
+<div class="category">
+  <div class="container">
+    <h3 class="title">all categories</h3>
+    <div class="row justify-content-center gy-4">
+      {% if categories %}
+        {% for item in categories %}
+              <div class="col-9 col-sm-5 col-md-5 col-lg-3">
+                <div class="card" >
+                  <a href=""><img src="{{item.img.url}}" class="card-img-top" alt="..."></a>
+                  <div class="card-body">
+                    <a href="{% url 'category' item.id item.slug %}"><h5 class="card-title">{{item.name|title}}</h5></a>
+                    
+                  </div>
+                </div>
+    
+              </div>
+          
+        {% endfor %}
+      {% endif %}
+      
+    
+      <!--  -->
+      
+    
+      
+      
+     
+    </div>
+  </div>
+</div>
+{% include "brands.html" %}
+{% endblock content %}
+
+
+
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock footer %}

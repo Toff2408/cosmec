@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block tilte %} User sign in {% endblock tilte %}
+{% block header %}
+  {% include "header.html" %}
+{% endblock header %}
+
+{% block content %}
+<div class="profiledetail">
+      <div class="container">
+        <h3 class="title">signup</h3>
+        <div class="row justify-content-center gy-4">
+          <div class="col-8 col-sm-5 col-md-5 col-lg-4 d-none d-lg-block img1">
+            <div class="card newimg">
+              <img src="/img/sc13.jpeg" alt="">
+            </div>
+          </div>
+          <div class="col-10 col-sm-10 col-md-8 col-lg-6">
+            <div class="card" >
+              <!-- <img src="/img/sc11.jpeg" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <div class="address">
+                  <form method="post" action="{% url 'signup' %}">
+                    {% csrf_token %}
+                      <div class="mb-3 password">
+                        <label for="exampleInputText1" class="form-label">Username</label>
+                        <input name='username' type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label">first name</label>
+                        <input  name='first_name' type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label" >last name</label>
+                        <input name='last_name' type="text" class="form-control" id="exampleInputtext1 " aria-describedby="textHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputemail1" class="form-label" >email</label>
+                        <input name='email' type="email" class="form-control" id="exampleInputEmail1 " aria-describedby="textHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label" >Phone</label>
+                        <input name='phone' type="text" class="form-control" id="exampleInputText1 " aria-describedby="textHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label" >Password</label>
+                        <input name='password1' type="password" class="form-control" id="exampleInputtext1 " aria-describedby="textHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label" >reset password</label>
+                        <input name='password2' type="password" class="form-control" id="exampleInputtext1 " aria-describedby="textHelp">
+                      </div>
+                      <button type="submit" class="btn">Signup</button>
+                      <div class="mb-3 ">
+                        <div id="textHelp" class="form-text">password should be at least 8 characters</div>
+                        <div id="textHelp" class="form-text">password can be letters, numbers and symbols</div>
+                      </div>
+                      <!-- <button type="submit" class="btn btn-primary">Pay</button> -->
+                    </form>
+              </div>
+              </div>
+            </div>  
+          </div>
+          <div class="col-8 col-sm-5 col-md-5 col-lg-4 d-none d-lg-block img1">
+            <div class="card newimg">
+              <video src="/video/pexels-anthony-shkraba-production-8688462.mp4" autoplay ></video>
+              <div class="card-body">
+                <h5>FOR ADVERT</h5>
+                <P>Contact- 09063284418</P>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+    <!-- content4 done -->
+    {% include "brands.html" %}
+    {% endblock content %}
+    
+    {% block footer %}
+      {% include "footer.html" %}
+    {% endblock footer %}

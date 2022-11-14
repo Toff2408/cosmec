@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block tilte %} Shopcart {% endblock tilte %}
+{% block header %} {% include "header.html" %} {% endblock header %}
+
+{% block content %}
+<div class="content">
+
+            <!-- content  -->
+  <div class="content">
+ <!-- content4  -->
+    <div class="callback">
+      <div class="container">
+        <h3 class="title">Password update</h3>
+        <div class="row justify-content-center gy-4">
+          <div class="col-3 corner ">
+            <div class="card newimg">
+              
+            </div>
+            <div class="card newimg">
+              
+            </div>
+            <div class="card newimg">
+              
+            </div>
+            <div class="card newimg">
+              
+            </div>
+          </div>
+          <div class="col-10 col-sm-10 col-md-8 col-lg-4">
+            <div class="card middle" >
+              <!-- <img src="/img/sc11.jpeg" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h4>DEAR {{profile.name|title}}, your transaction is completed</h4>
+                <p>your order will be delivered under 24hours</p>
+                <p>Thank you for your patronage</p>
+                
+              </div>
+            </div>  
+          </div>
+          <div class="col-3 corner">
+            
+              <div class="card newimg">
+                
+              </div>
+              <div class="card newimg">
+                
+              </div>
+              <div class="card newimg">
+                
+              </div>
+              <div class="card newimg">
+                
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+    <!-- content4 done -->
+    
+    
+    {% include "brands.html" %}
+    <!-- cotent 5  -->
+    
+    <!--  -->
+  </div>
+{% endblock content %}
+
+
+
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock footer %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %} Password change {% endblock title %}
+
+{% block header %} {% include "header.html" %} {% endblock header %}
+
+{% block content %}
+<!-- content4  -->
+    <div class="profiledetail">
+      <div class="container">
+        <h3 class="title">profile detail</h3>
+        <div class="row justify-content-center gy-4">
+          <div class="col-8 col-sm-5 col-md-5 col-lg-4 d-none d-lg-block img1">
+            <div class="card newimg">
+              <img src="{{profile.profile_img.url}}">  
+            </div>
+          </div>
+          <div class="col-10 col-sm-10 col-md-8 col-lg-6">
+            <div class="card" >
+              <!-- <img src="/img/sc11.jpeg" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <div class="address">
+                  <form action="{% url 'profile_password' %}" method="POST"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                      <div class="mb-3">
+                        {{update.as_p}}
+                        <input type="text" value="{{profile.first_name|title}}" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                      </div>
+                      <button type="submit" class="btn btn-primary">update</button>
+                    </form>
+              </div>
+              </div>
+            </div>  
+          </div>
+          <div class="col-10 col-sm-10 col-md-4 col-lg-3 advert">
+            <!-- <img src="/img/sc7.jpeg" alt=""> -->
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 mb-4">
+                <div class="col-12 col-lg-10 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <p class="cardtext"><a href="">home</a></p>
+                      <p class="cardtext"><a href="">cart</a></p>
+                      <p class="cardtext"><a href="">profile</a></p>
+                      <p class="cardtext"><a href="">profile update</a></p>
+                      <p class="cardtext"><a href="">password update</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+    <!-- content4 done -->
+    {% include "brands.html" %}
+    <!-- cotent 5  -->
+    
+    <!--  -->
+  </div>
+{% endblock content %}
+
+
+
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock footer %}

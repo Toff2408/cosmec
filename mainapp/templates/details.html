@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block tilte %} Details {% endblock tilte %}
+{% block header %} {% include "header.html" %} {% endblock header %}
+{% block hero %} {% include "hero.html" %} {% endblock hero %}
+
+{% block content %}
+<div class="content">
+
+     <!-- content4  -->
+    <div class="details">
+      <div class="container">
+        <h3 class="title">Product Details</h3>
+        <div class="row justify-content-center gy-4">
+          <div class="col-8 col-sm-5 col-md-5 col-lg-4 d-none d-lg-block img1">
+            <img src="{% static '' %}img/sc13.jpeg" alt="">
+          </div>
+          <div class="col-10 col-sm-10 col-md-8 col-lg-6">
+            <div class="card" >
+              <img src="{{details.p_img.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">Category:{{details.category.name|title}}</h5>
+                  <p class="card-text">Product:{{details.p_name|title}}</p>
+                  <p class="card-text">Price:${{details.p_price}}</p>
+                  <p class="card-text">Description: {{details.p_des}}</p>
+                  <form action="{% url 'itemtocart' %}" method="POST">
+                  {% csrf_token %}
+                    <input type="hidden" name="productid" value="{{details.id}}">
+                    <label>Qty: <input name="quantity" type="number"  value="1" min="{{details.p_min}}" max="{{details.p_max}}" class="py-1 px-2"></label>
+                    <button type="submit" class="btn my-2">Add to Cart</button>
+
+                  </form>
+              </div>
+            </div>  
+          </div>
+          <div class="col-10 col-sm-10 col-md-4 col-lg-4 d-none d-lg-block img2">
+            <img src="{% static '' %}img/sc7.jpeg" alt="">
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+    <!-- content4 done -->
+    {% include "brands.html" %}
+    <!-- cotent 5  -->
+    
+    <!--  -->
+  </div>
+{% endblock content %}
+
+
+
+{% block footer %}
+  {% include "footer.html" %}
+{% endblock footer %}
